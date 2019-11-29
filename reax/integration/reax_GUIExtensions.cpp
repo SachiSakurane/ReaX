@@ -253,7 +253,7 @@ SliderExtension::SliderExtension(juce::Slider& parent,
         .disposedBy(disposeBag);
 
     _doubleClickReturnValue.subscribe([&parent](double value) {
-                               parent.setDoubleClickReturnValue(value != DBL_MAX, value);
+                               parent.setDoubleClickReturnValue(value != std::numeric_limits<double>::max(), value);
                            })
         .disposedBy(disposeBag);
 
