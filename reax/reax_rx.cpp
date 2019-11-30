@@ -3,7 +3,11 @@
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wcomma"
-#include "RxCpp/Rx/v2/src/rxcpp/rx.hpp"
+#if __has_include(<rxcpp/rx.hpp>)
+    #include <rxcpp/rx.hpp>
+#else
+    #include "RxCpp/Rx/v2/src/rxcpp/rx.hpp"
+#endif
 #pragma clang diagnostic pop
 
 // Enable stricter warnings
